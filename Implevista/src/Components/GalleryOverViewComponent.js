@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { widthPercentageToDP } from 'react-native-responsive-screen';
-import { saveGalleryPrivacy } from '../Utils/AsyncStorageHelper';
+import ActiveInActiveComponent from '../Components/ActiveInActiveComponent';
 import { Switch } from 'react-native-switch';
 import IMColors from '../Utils/Colors';
 import { Fonts } from '../Utils/FontConstant';
@@ -22,16 +22,10 @@ function GalleryOverViewComponent(props) {
                 <Text style={styles.txtModeStyle}>
                     {"Secret mode"}
                 </Text>
-                <Switch
-                    value={props.isSwitchOn}
+                    <ActiveInActiveComponent 
+                    value = {props.isSwitchOn}
                     onValueChange={onChangePrivacyValue}
-                    disabled={false}
-                    activeText={'active'}
-                    inActiveText={'InActive'}
-                    backgroundActive={'green'}
-                    backgroundInactive={'gray'}
-                    circleActiveColor={'#30a566'}
-                    circleInActiveColor={'#000000'} />
+                    />
 
             </View>
         </View>
